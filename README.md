@@ -12,8 +12,6 @@ header-includes:
 
 A kubelet can be pointed to a directory of [pod](https://kubernetes.io/docs/concepts/workloads/pods/pod/) manifests. While running, the kubelet creates and manages the lifecycle for these pods. This allows you to create pods without connectivity to a Kubernetes control plane. These pods are referred to as static pods. If you are wondering when you would ever need this, you are not alone! In this post you will learn how static pods work, when to use them, and best practice considerations.
 
-## Video
-
 ## How Static Pods Work
 
 The kubelet features an optional flag, `--pod-manifest-path` (or `staticPodPath` if using [kubelet configuration](https://kubernetes.io/docs/tasks/administer-cluster/kubelet-config-file/#create-the-config-file)). This points to a directory. When started, the kubelet attempts to create a pod for each manifest in this directory. The kubelet does not require connection to an API server to start these pods. This means the kubelet manages the pod’s lifecycle.
