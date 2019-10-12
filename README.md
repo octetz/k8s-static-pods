@@ -1,11 +1,11 @@
 ---
-title: Kubernetes Static Pods - Considerations, Exploits, and More
+title: Kubernetes Static Pods
 header-includes:
     <meta name="twitter:card" content="summary_large_image" />
     <meta name="twitter:site" content="octetz.com" />
     <meta name="twitter:title" content="What are Static Pods in Kubernetes?" />
     <meta name="twitter:description" content="In this post we will be looking at static pods. What they are, why they exist, and more!" />
-    <meta name="twitter:image" content="https://octetz.com/posts/img/k8s-static-pods-banner.png" />
+    <meta name="twitter:image" content="https://octetz.s3.us-east-2.amazonaws.com/k8s-static-pods/tc.png" />
 ---
 
 # Static Pods
@@ -24,7 +24,7 @@ As far as I remember (I could be wrong) static pods were introduced for running 
 
 <center><img src="https://octetz.s3.us-east-2.amazonaws.com/k8s-static-pods/tweet1.png" width="800"></center>
 
-When should you use them? I’d argue, almost never. If considering static pods, first determine whether a daemonset is adequate. Daemonsets are entirely managed via the Kubernetes control plane. Adding, deleting, and modifying a daemonset like any other Kubernetes objects. Since they are created through the API server, they are managed centrally and go through the API server’s RBAC and admission control. The key feature to static pods that _may _justify the use is that they **do not require connectivity to the API server.** As mentioned earlier, the host’s kubelet manages the lifecycle. Two use cases I am aware of are as follows.
+When should you use them? I’d argue, almost never. If considering static pods, first determine whether a daemonset is adequate. Daemonsets are entirely managed via the Kubernetes control plane. Adding, deleting, and modifying a daemonset is like any other Kubernetes objects Since they are created through the API server, they are managed centrally and go through the API server’s RBAC and admission control. The key feature to static pods that _may_ justify the use is that they **do not require connectivity to the API server.** As mentioned earlier, the host’s kubelet manages the lifecycle. Two use cases I am aware of are as follows.
 
 1. Hosting the Kubernetes control plane.
 2. IoT and edge deployments.
