@@ -35,7 +35,7 @@ IoT and Edge deployments are newer cases that I haven’t seen in the wild yet, 
 
 <center><img src="https://octetz.s3.us-east-2.amazonaws.com/k8s-static-pods/tweet2.png" width="800"></center>
 
-<p align="center">_redacted for brevity, full comment [here](https://github.com/kubernetes/kubeadm/issues/1541#issuecomment-488112516)._</p>
+_redacted for brevity, full comment [here](https://github.com/kubernetes/kubeadm/issues/1541#issuecomment-488112516)._
 
 In this model, kubelets run on edge or low-resource nodes that need to bootstrap pods but cannot rely on having an API server around. Using configuration management, manifests can be pushed to the hosts and, assuming the kubelet is running, pods are created. You could introduce an API server at a central location and the kubelets will then create mirror pods. As described earlier, these mirror pods will allow viewing logs, running commands, and getting pod information from various kubelets.
 
