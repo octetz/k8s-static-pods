@@ -29,7 +29,7 @@ When should you use them? I’d argue, almost never. If considering static pods,
 1. Hosting the Kubernetes control plane.
 2. IoT and edge deployments.
 
-Creating the Kubernetes control plane via static pods is [kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/)’s approach. In order to run the `kube-apiserver`, `kube-controller-manager`, and `kube-scheduler` as pods, you need to create those them before the control plane exists. A classic chicken and the egg dilemma. Static pods solve this.
+Creating the Kubernetes control plane via static pods is [kubeadm](https://kubernetes.io/docs/setup/production-environment/tools/kubeadm/install-kubeadm/)’s approach. In order to run the `kube-apiserver`, `kube-controller-manager`, and `kube-scheduler` as pods, you need to create them before the control plane exists. A classic chicken and the egg dilemma. Static pods solve this.
 
 IoT and Edge deployments are newer cases that I haven’t seen in the wild yet, but may benefit from static pods. 
 
